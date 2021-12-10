@@ -55,7 +55,8 @@ module.exports = {
       },
       // create custom gradient color here
       gradientColorStops: {
-        hue: withOpacity("--color-fill"),
+        "check-bg-start": withOpacity("--check-bg-start"),
+        "check-bg-end": withOpacity("--check-bg-end"),
       },
     },
   },
