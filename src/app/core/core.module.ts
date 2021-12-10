@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FooterComponent, HeaderComponent } from './components';
+import { FooterComponent, HeaderComponent, ThemeComponent } from './components';
 import { AppComponent } from './containers';
 
-export const COMPONENTS = [HeaderComponent, FooterComponent];
+export const COMPONENTS = [HeaderComponent, FooterComponent, ThemeComponent];
 export const CONTAINERS = [AppComponent];
 
 @NgModule({
