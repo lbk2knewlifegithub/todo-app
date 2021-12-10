@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    // colors
+    // --very-light-gray: hsl(0, 0%, 98%)
+    // --very-light-grayish-blue: hsl(236, 33%, 92%)
+    // --light-grayish-blue: hsl(233, 11%, 84%)
+    // --dark-grayish-blue: hsl(236, 9%, 61%)
+    // --very-dark-grayish-blue: hsl(235, 19%, 35%)
+    // --bright-blue: hsl(220, 98%, 61%)
+    // --check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+
+    ////////////////////
+    // text colors /////
+    ////////////////////
+    --text-fill: var(--white);
+    --text-muted: var(--grayish-blue);
+    --text-inverted: var(--gray-blue);
+    --text-danger: var(--red);
+
+    /////////////////////////////
+    // background colors /////////
+    /////////////////////////////
+    --bg-fill: var(--red);
+    --bg-form: var(--white);
+
+    /////////////////////////////
+    // background button colors /////////
+    /////////////////////////////
+    --bg-button-primary: var(--blue);
+    --bg-button-success: var(--green);
+
+    /////////////////////////////
+    // border colors /////////////
+    /////////////////////////////
+    --border-fill: var(--grayish-blue);
+    --border-danger: var(--red);
+  }
+
+  //make default form look nice
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500;
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    @apply border-gray-300 rounded text-indigo-600 focus:ring-indigo-500;
+  }
+}
+
+input.ng-invalid.ng-touched {
+  @apply border-2 border-danger;
+}
+
+@layer components {
+  .container-large {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
