@@ -8,14 +8,41 @@ import * as fromRoot from 'src/app/reduders';
   selector: 'lbk-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <header class="fixed top-0 left-0 w-full ">
+    <header class="fixed top-0 left-0 w-full z-[-1]">
       <!-- background -->
       <div class="absolute w-full top-0 left-0 z-[-1]">
-        <img
-          class="w-full object-cover object-center"
-          src="/assets/images/bg-mobile-light.jpg"
-          alt="Background"
-        />
+        <!-- background dark theme -->
+        <div *ngIf="darkTheme$ | async; else lightBg">
+          <img
+            class="w-full object-cover object-center desktop:hidden"
+            src="/assets/images/bg-mobile-light.jpg"
+            alt="Background"
+          />
+
+          <img
+            class="w-full object-cover object-center hidden desktop:block"
+            src="/assets/images/bg-desktop-light.jpg"
+            alt="Background"
+          />
+        </div>
+
+        <!-- end background dark theme -->
+
+        <!-- background light theme -->
+        <ng-template #lightBg>
+          <img
+            class="w-full object-cover object-center desktop:hidden"
+            src="/assets/images/bg-mobile-dark.jpg"
+            alt="Background"
+          />
+
+          <img
+            class="w-full object-cover object-center hidden desktop:block"
+            src="/assets/images/bg-desktop-dark.jpg"
+            alt="Background"
+          />
+        </ng-template>
+        <!-- end background light theme -->
       </div>
       <!-- end background -->
 

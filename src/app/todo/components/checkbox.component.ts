@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   template: `
     <div
       [class.active]="checked"
-      class="rounded-full w-8 h-8 border border-black/30 grid place-content-center place-items-center"
+      class="rounded-full w-8 h-8 border border-black/30 grid place-content-center place-items-center cursor-pointer"
     >
       <i *ngIf="checked" class="fas fa-check text-xl"></i>
     </div>

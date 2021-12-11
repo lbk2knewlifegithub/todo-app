@@ -128,6 +128,15 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/cdk@^13.1.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-13.1.0.tgz#e594a3131d8334112a42447ec30e862b8d410323"
+  integrity sha512-OOMDmXnCpodYMEbRro8FUcXqQ8UN3lU/OXnuuDhHOJIrb7loizSGKkJdaVLZtM9ygH7qbOxRhkC2efjmtIn48g==
+  dependencies:
+    tslib "^2.3.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~13.0.3":
   version "13.0.4"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-13.0.4.tgz#28932cb8e2c9e1eb4a65db459be851932f51eecd"
@@ -1230,6 +1239,18 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ngrx/schematics@^13.0.2":
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-13.0.2.tgz#1c7cacebfd7708ed9c8d4b0098984f13292a17cc"
+  integrity sha512-84LwEv7MBTX49e1wjuXKgemxfmQUBdvfUKfPq7AmrTW99EtHHAuLYc+pL9XrbgKvkvVyVmDt+g6d3iw/80TZ1w==
+
+"@ngrx/store-devtools@^13.0.2":
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-13.0.2.tgz#2b412fe47894fbb0c2aec8c1402f150bc139d5e9"
+  integrity sha512-fcQ5A7cv9PONFvqlpFPXHswWjEflJvqrNt6wmywlxMtJDjkgzCHpvRiJqup/FiTosblRERoeZXN0oHW3Er3+rw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/store@^13.0.2":
   version "13.0.2"
   resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-13.0.2.tgz#43f187956e07f33baed3e6215cd2fc59a06e9789"
@@ -1426,6 +1447,11 @@
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.1.tgz#d8f1c0d0dc23afad6dc16a9e993a0865774b4065"
   integrity sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==
+
+"@types/uuid@^8.3.3":
+  version "8.3.3"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.3.tgz#c6a60686d953dbd1b1d45e66f4ecdbd5d471b4d0"
+  integrity sha512-0LbEEx1zxrYB3pgpd1M5lEhLcXjKJnYghvhTRgaBeUivLHMDM1TzF3IJ6hXU2+8uA4Xz+5BA63mtZo5DjVT8iA==
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
@@ -4719,6 +4745,11 @@ parse5-sax-parser@^6.0.1:
   integrity sha512-kXX+5S81lgESA0LsDuGjAlBybImAChYRMT+/uKCEXFBFOeEhS52qUCydGhU3qLRD8D9DVjaUo821WK7DM4iCeg==
   dependencies:
     parse5 "^6.0.1"
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
 
 parse5@^6.0.1:
   version "6.0.1"

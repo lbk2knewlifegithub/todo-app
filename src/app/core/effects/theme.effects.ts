@@ -6,12 +6,12 @@ import { ThemeService } from '../services/theme.service';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeEffects {
+
   setDarkThem$ = createEffect(
     () =>
       this._actions$.pipe(
         ofType(ThemeActions.setDarkTheme),
         switchMap(({ darkTheme }) => this._themeService.setDarkTheme(darkTheme)),
-        switchMap((darkTheme) => this._themeService.saveDarkTheme(darkTheme))
       ),
     {
       dispatch: false,
@@ -22,7 +22,6 @@ export class ThemeEffects {
     this._actions$.pipe(
       ofType(ThemeActions.loadDarkTheme),
       switchMap(() => this._themeService.loadDarkTheme()),
-      switchMap((darkTheme) => this._themeService.saveDarkTheme(darkTheme)),
       map((darkTheme) => ThemeActions.setDarkTheme({ darkTheme }))
     )
   );
