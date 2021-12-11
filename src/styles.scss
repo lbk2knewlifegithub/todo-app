@@ -5,77 +5,73 @@
 @layer base {
   :root {
     // colors
-    // --very-light-gray: hsl(0, 0%, 98%)
-    // --very-light-grayish-blue: hsl(236, 33%, 92%)
-    // --light-grayish-blue: hsl(233, 11%, 84%)
-    // --dark-grayish-blue: hsl(236, 9%, 61%)
-    // --very-dark-grayish-blue: hsl(235, 19%, 35%)
-    // --bright-blue: hsl(220, 98%, 61%)
     --white: 0, 0%, 100%;
     --black: 0, 0%, 0%;
+    --bright-blue: 220, 98%, 61%;
 
     ////////////////////
     // text colors /////
     ////////////////////
-    --text-fill: var(--black);
-    --text-muted: var(--grayish-blue);
-    --text-inverted: var(--gray-blue);
+    --text-fill: 235, 19%, 35%;
+    --text-muted: 236, 33%, 92%;
+    --text-muted-100: 233, 11%, 84%;
+    --text-muted-200: 236, 9%, 61%;
+    --text-primary: var(--bright-blue);
+    --text-inverted: 235, 19%, 35%;
     --text-danger: var(--red);
 
     /////////////////////////////
     // background colors /////////
     /////////////////////////////
-    --bg-fill: var(--red);
-    --bg-form: var(--white);
+    --bg-fill: 0, 0%, 98%;
+    --bg-elements: var(--white);
 
-    /////////////////////////////
-    // background button colors /////////
-    /////////////////////////////
-    --bg-button-primary: var(--blue);
-    --bg-button-success: var(--green);
-
-    /////////////////////////////
-    // border colors /////////////
-    /////////////////////////////
-    --border-fill: var(--grayish-blue);
-    --border-danger: var(--red);
+    // border colors
+    --bd-fill: 236, 33%, 92%;
+    --bd-ring-checkbox: 233, 11%, 84%;
 
     // checkbox background
     --check-bg-start: 192, 100%, 67%;
     --check-bg-end: 280, 87%, 65%;
 
     .dark-theme {
-      --bg-fill: var(--black);
+      ////////////////////
+      // text colors /////
+      ////////////////////
+      --text-fill: 234, 39%, 85%;
+      --text-muted: 234, 11%, 52%;
+      --text-muted-100: 233, 14%, 35%;
+      --text-muted-200: 235, 19%, 35%;
+      // text color in todo filter component
+      --text-primary: var(--bright-blue);
+      --text-inverted: var(--white);
+
+      /////////////////////////////
+      // background colors /////////
+      /////////////////////////////
+      --bg-fill: 235, 21%, 11%;
+      --bg-elements: 235, 24%, 19%;
+
+      // border colors
+      --bd-fill: 233, 14%, 26%;
+      --bd-ring-checkbox: 233, 14%, 35%;
+
+      // checkbox background
+      --check-bg-start: 192, 100%, 67%;
+      --check-bg-end: 280, 87%, 65%;
     }
   }
 
   //make default form look nice
   [type="text"],
-  [type="email"],
-  [type="url"],
-  [type="password"],
-  [type="number"],
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="search"],
-  [type="tel"],
-  [type="time"],
-  [type="week"],
-  [multiple],
-  textarea,
-  select {
-    @apply w-full border-gray-300 text-black rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500;
+  [type="email"] {
+    @apply w-full bg-elements border-fill rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500;
   }
 
   [type="checkbox"],
   [type="radio"] {
     @apply border-gray-300 rounded text-indigo-600 focus:ring-indigo-500;
   }
-}
-
-input.ng-invalid.ng-touched {
-  @apply border-2 border-danger;
 }
 
 @layer components {

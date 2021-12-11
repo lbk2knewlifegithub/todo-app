@@ -12,7 +12,7 @@ import { Todo } from '../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div
-      class="bg-white shadow-md flex justify-between p-4 items-center border-b-2 border-gray-100 cursor-pointer"
+      class="bg-elements shadow-md flex justify-between p-4 items-center border-b-2 border-fill cursor-pointer"
     >
       <div class="flex gap-4 items-center">
         <!-- checkbox -->
@@ -23,7 +23,7 @@ import { Todo } from '../models';
         <!-- end checkbox -->
 
         <!-- name -->
-        <p class="text-black font-bold {{ todo.completed ? 'line-through text-gray-300' : '' }}">
+        <p class="text-fill font-bold {{ todo.completed ? 'line-through text-muted' : '' }}">
           {{ todo.name }}
         </p>
         <!-- end name -->
@@ -32,7 +32,7 @@ import { Todo } from '../models';
       <!-- remove -->
       <div
         (click)="remove.emit()"
-        class="text-3xl text-gray-300 cursor-pointer"
+        class="text-2xl text-muted-100 cursor-pointer"
       >
         <i class="fas fa-times"></i>
       </div>

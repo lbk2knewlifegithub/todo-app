@@ -10,17 +10,17 @@ import * as fromRoot from 'src/app/reduders';
   template: `
     <header class="fixed top-0 left-0 w-full z-[-1]">
       <!-- background -->
-      <div class="absolute w-full top-0 left-0 z-[-1]">
+      <div class="absolute w-full top-0 left-0 z-[-1] max-h-32">
         <!-- background dark theme -->
         <div *ngIf="darkTheme$ | async; else lightBg">
           <img
-            class="w-full object-cover object-center desktop:hidden"
+            class="bg desktop:hidden"
             src="/assets/images/bg-mobile-light.jpg"
             alt="Background"
           />
 
           <img
-            class="w-full object-cover object-center hidden desktop:block"
+            class="bg hidden desktop:block"
             src="/assets/images/bg-desktop-light.jpg"
             alt="Background"
           />
@@ -31,13 +31,13 @@ import * as fromRoot from 'src/app/reduders';
         <!-- background light theme -->
         <ng-template #lightBg>
           <img
-            class="w-full object-cover object-center desktop:hidden"
+            class="bg desktop:hidden"
             src="/assets/images/bg-mobile-dark.jpg"
             alt="Background"
           />
 
           <img
-            class="w-full object-cover object-center hidden desktop:block"
+            class="bg hidden desktop:block"
             src="/assets/images/bg-desktop-dark.jpg"
             alt="Background"
           />
@@ -46,10 +46,14 @@ import * as fromRoot from 'src/app/reduders';
       </div>
       <!-- end background -->
 
-      <nav class="container flex justify-between items-center py-10 ">
+      <nav
+        class="container flex justify-between items-center py-8 max-w-2xl tablet:py-16"
+      >
         <!-- logo -->
         <div>
-          <h1 class="text-white text-4xl  font-bold tracking-[.5rem] ">
+          <h1
+            class="text-3xl text-white  font-bold tracking-[.5rem] tablet:text-4xl"
+          >
             TO DO
           </h1>
         </div>
@@ -64,6 +68,13 @@ import * as fromRoot from 'src/app/reduders';
       </nav>
     </header>
   `,
+  styles: [
+    `
+      .bg {
+        @apply min-h-[200px] max-h-96 w-full object-cover object-center;
+      }
+    `,
+  ],
 })
 export class HeaderComponent implements OnInit {
   darkTheme$: Observable<boolean> = this._store.select(

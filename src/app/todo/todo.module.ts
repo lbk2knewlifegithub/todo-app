@@ -1,9 +1,9 @@
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import * as fromTodos from 'src/app/todo/reducers';
 import {
   CheckboxComponent,
@@ -11,7 +11,8 @@ import {
   TodoInputComponent,
   TodoPreviewComponent,
   TodoPreviewListComponent,
-  TodoStatsComponent
+  TodoStatsLargeComponent,
+  TodoStatsSmallComponent
 } from './components';
 import { TodoPageComponent } from './containers';
 import { TodoEffects } from './effects/todo.effects';
@@ -22,8 +23,9 @@ const COMPONENTS = [
   TodoInputComponent,
   TodoPreviewListComponent,
   TodoFilterComponent,
-  TodoStatsComponent,
   CheckboxComponent,
+  TodoStatsSmallComponent,
+  TodoStatsLargeComponent
 ];
 
 const CONTAINERS = [TodoPageComponent];

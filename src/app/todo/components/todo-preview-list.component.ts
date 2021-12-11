@@ -12,7 +12,10 @@ import { Todo } from '../models';
   selector: 'lbk-todo-preview-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div cdkDropList (cdkDropListDropped)="dragDrop($event)" class="rounded-md">
+    <div
+      cdkDropList
+      (cdkDropListDropped)="dragDrop($event)"
+    >
       <lbk-todo-preview
         *ngFor="let todo of todos"
         cdkDrag

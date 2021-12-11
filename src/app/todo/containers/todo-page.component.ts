@@ -10,33 +10,45 @@ import { Search } from '../models/search.model';
   selector: 'lbk-todo-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <main class="mt-32 z-50 ">
-      <div class="container">
-        <div>
-          <!-- input -->
-          <lbk-todo-input (newTodo)="newTodo($event)"></lbk-todo-input>
-          <!-- end input -->
+    <main class="mt-24 z-50 tablet:mt-40">
+      <div class="container max-w-2xl">
+        <!-- input -->
+        <lbk-todo-input (newTodo)="newTodo($event)"></lbk-todo-input>
+        <!-- end input -->
 
+        <div class="rounded-lg overflow-hidden shadow-lg mt-4 ">
           <!-- todo list -->
           <lbk-todo-preview-list
+            class="block"
             (dragDropChange)="dragDrop($event)"
-            class="mt-10 block"
             (remove)="remove($event)"
             (completed)="completed($event)"
             [todos]="(todos$ | async)!"
           ></lbk-todo-preview-list>
           <!-- end todo list -->
 
-          <!-- stats -->
-          <lbk-todo-stats
+          <!-- stats small -->
+          <lbk-todo-stats-small
+            class="tablet:hidden"
             [itemsLeft]="(itemsLeft$ | async)!"
             (clearCompleted)="clearCompleted()"
-          ></lbk-todo-stats>
-          <!-- end stats -->
+          ></lbk-todo-stats-small>
+          <!-- end stats small -->
+
+          <!-- stats large -->
+          <lbk-todo-stats-large
+            class="hidden tablet:block"
+            [itemsLeft]="(itemsLeft$ | async)!"
+            (clearCompleted)="clearCompleted()"
+            [search]="(search$ | async)!"
+            (searchChange)="onSearch($event)"
+          ></lbk-todo-stats-large>
+          <!-- end stats large -->
         </div>
 
         <!-- filter -->
         <lbk-todo-filter
+          class="block mt-4 p-4 tablet:hidden bg-elements shadow-lg rounded-lg"
           [search]="(search$ | async)!"
           (searchChange)="onSearch($event)"
         ></lbk-todo-filter>
@@ -45,7 +57,7 @@ import { Search } from '../models/search.model';
 
       <!-- guide  -->
       <div class="mt-16">
-        <p class="text-gray-400 font-bold text-center text-lg">
+        <p class="text-muted-200 font-bold text-center text-lg">
           Drag and drop to reorder list
         </p>
       </div>

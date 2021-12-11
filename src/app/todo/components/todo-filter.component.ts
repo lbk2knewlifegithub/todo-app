@@ -12,7 +12,7 @@ import { Search } from '../models/search.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ul
-      class="flex gap-6 items-center text-gray-500 justify-center mt-6 bg-white shadow-lg p-4 font-bold cursor-pointer"
+      class="flex gap-6 items-center font-black text-muted-200 justify-center  cursor-pointer"
     >
       <li [class.active]="search == 'all'" (click)="searchChange.emit('all')">
         All
@@ -34,7 +34,7 @@ import { Search } from '../models/search.model';
   styles: [
     `
       .active {
-        @apply text-blue-500;
+        @apply text-primary;
       }
     `,
   ],

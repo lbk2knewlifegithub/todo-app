@@ -33,25 +33,26 @@ module.exports = {
       },
       // create custom fonts here
       fontFamily: {
-        heading: "'LoraRegular', 'serif'",
-        mono: ["'DMMonoRegular'", ...defaultTheme.fontFamily.mono],
+        mono: ["'Josefin Sans'", ...defaultTheme.fontFamily.mono],
       },
       // create custom text colors here
       textColor: {
         fill: withOpacity("--text-fill"),
         muted: withOpacity("--text-muted"),
+        'muted-100': withOpacity("--text-muted-100"),
+        'muted-200': withOpacity("--text-muted-200"),
         inverted: withOpacity("--text-inverted"),
+        primary: withOpacity("--text-primary"),
       },
       // create custom background colors here
       backgroundColor: {
         fill: withOpacity("--bg-fill"),
         footer: withOpacity("--bg-footer"),
-        "button-accent": withOpacity("--bg-button-accent"),
-        "button-accent-hover": withOpacity("--bg-button-accent-hover"),
-        "button-muted": withOpacity("--bg-button-muted"),
+        elements: withOpacity("--bg-elements"),
       },
       borderColor: {
-        danger: withOpacity("--border-danger"),
+        fill: withOpacity("--bd-fill"),
+        'ring-checkbox': withOpacity("--bd-ring-checkbox"),
       },
       // create custom gradient color here
       gradientColorStops: {
