@@ -43,6 +43,10 @@
     // checkbox background
     --check-bg-start: 192, 100%, 67%;
     --check-bg-end: 280, 87%, 65%;
+
+    .dark-theme {
+      --bg-fill: var(--black);
+    }
   }
 
   //make default form look nice
