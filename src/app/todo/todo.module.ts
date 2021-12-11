@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromTodos from 'src/app/todo/reducers';
 import {
   CheckboxComponent,
+  TodoEmptyComponent,
   TodoFilterComponent,
   TodoInputComponent,
   TodoPreviewComponent,
@@ -25,7 +26,9 @@ const COMPONENTS = [
   TodoFilterComponent,
   CheckboxComponent,
   TodoStatsSmallComponent,
-  TodoStatsLargeComponent
+  TodoStatsLargeComponent,
+  TodoPageComponent,
+  TodoEmptyComponent,
 ];
 
 const CONTAINERS = [TodoPageComponent];

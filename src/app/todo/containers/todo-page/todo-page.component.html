@@ -1,0 +1,47 @@
+<main class="z-50 mt-24 tablet:mt-40">
+  <div class="container max-w-2xl">
+    <!-- input -->
+    <lbk-todo-input (newTodo)="newTodo($event)"></lbk-todo-input>
+    <!-- end input -->
+
+    <ng-container *ngIf="!(empty$ | async) else todoEmpty">
+      <div class="mt-4 overflow-hidden rounded-lg shadow-lg ">
+        <!-- todo list -->
+        <lbk-todo-preview-list class="block" (dragDropChange)="dragDrop($event)" (remove)="remove($event)"
+          (completed)="completed($event)" [todos]="(todos$ | async)!"></lbk-todo-preview-list>
+        <!-- end todo list -->
+
+        <!-- stats small -->
+        <lbk-todo-stats-small class="tablet:hidden" [itemsLeft]="(itemsLeft$ | async)!"
+          (clearCompleted)="clearCompleted()"></lbk-todo-stats-small>
+        <!-- end stats small -->
+
+        <!-- stats large -->
+        <lbk-todo-stats-large class="hidden tablet:block" [itemsLeft]="(itemsLeft$ | async)!"
+          (clearCompleted)="clearCompleted()" [search]="(search$ | async)!" (searchChange)="onSearch($event)">
+        </lbk-todo-stats-large>
+        <!-- end stats large -->
+      </div>
+
+      <!-- filter -->
+      <lbk-todo-filter class="block p-4 mt-4 rounded-lg shadow-lg tablet:hidden bg-elements"
+        [search]="(search$ | async)!" (searchChange)="onSearch($event)"></lbk-todo-filter>
+      <!-- end filter -->
+
+      <!-- guide  -->
+      <div class="mt-16">
+        <p class="text-lg font-bold text-center text-muted-200">
+          Drag and drop to reorder list
+        </p>
+      </div>
+      <!-- end guide  -->
+    </ng-container>
+
+    <ng-template #todoEmpty>
+      <lbk-todo-empty class="block mt-10"></lbk-todo-empty>
+    </ng-template>
+  </div>
+
+  <!-- todo empty  -->
+  <!-- en todo empty -->
+</main>

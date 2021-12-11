@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 
     <router-outlet></router-outlet>
 
-    <!-- <lbk-footer></lbk-footer> -->
+    <lbk-footer></lbk-footer>
   `,
 })
 export class AppComponent {}

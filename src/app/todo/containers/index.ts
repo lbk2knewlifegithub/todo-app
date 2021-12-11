@@ -1,1 +1,1 @@
-export * from "./todo-page.component"
+export * from "./todo-page/todo-page.component"
